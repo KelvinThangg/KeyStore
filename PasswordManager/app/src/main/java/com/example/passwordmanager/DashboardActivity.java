@@ -178,19 +178,60 @@ public class DashboardActivity extends AppCompatActivity implements PasswordAdap
     private void loadUserInfo() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            // ... (code load user info như cũ) ...
             String email = currentUser.getEmail();
             String uid = currentUser.getUid();
             Log.d(TAG, "Đang tải thông tin người dùng cho UID: " + uid);
+
             db.collection("users").document(uid).get()
                     .addOnCompleteListener(task -> {
-                        // ... (xử lý kết quả) ...
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document != null && document.exists()) {
+                                // Lấy tên từ Firestore
+                                String displayName = document.getString("fullName");
+                                String userEmail = document.getString("email");
+
+                                // Cập nhật UI với tên người dùng
+                                if (displayName != null && !displayName.isEmpty()) {
+                                    tvWelcome.setText("Xin chào, " + displayName + "!");
+                                } else if (userEmail != null && !userEmail.isEmpty()) {
+                                    // Nếu không có displayName, dùng phần đầu của email
+                                    String nameFromEmail = userEmail.split("@")[0];
+                                    tvWelcome.setText("Xin chào, " + nameFromEmail + "!");
+                                } else {
+                                    tvWelcome.setText("Xin chào, User!");
+                                }
+
+                                Log.d(TAG, "Đã cập nhật tên người dùng: " + displayName);
+                            } else {
+                                // Document không tồn tại, sử dụng email từ FirebaseAuth
+                                if (email != null && !email.isEmpty()) {
+                                    String nameFromEmail = email.split("@")[0];
+                                    tvWelcome.setText("Xin chào, " + nameFromEmail + "!");
+                                } else {
+                                    tvWelcome.setText("Xin chào, User!");
+                                }
+                                Log.d(TAG, "Document người dùng không tồn tại, sử dụng email");
+                            }
+                        } else {
+                            // Lỗi khi truy vấn, sử dụng email từ FirebaseAuth
+                            Log.w(TAG, "Lỗi khi lấy thông tin người dùng: ", task.getException());
+                            if (email != null && !email.isEmpty()) {
+                                String nameFromEmail = email.split("@")[0];
+                                tvWelcome.setText("Xin chào, " + nameFromEmail + "!");
+                            } else {
+                                tvWelcome.setText("Xin chào, User!");
+                            }
+                        }
+
+                        // Sau khi cập nhật thông tin user, tải danh sách mật khẩu
                         loadPasswordsForCurrentUser();
                     });
         } else {
-            // ... (xử lý khi không có user) ...
+            // Không có user đăng nhập
+            tvWelcome.setText("Xin chào, User!");
             this.allPasswordItemList.clear();
-            filterAndDisplayPasswords(""); // Hiển thị danh sách rỗng (hoặc trạng thái trống)
+            filterAndDisplayPasswords("");
             updatePasswordCountUI(0);
             checkEmptyState();
         }

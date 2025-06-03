@@ -28,7 +28,7 @@
             android:name=".AddEditPasswordActivity"
             android:exported="false"
             android:parentActivityName=".DashboardActivity"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- Activity khởi động đầu tiên -->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

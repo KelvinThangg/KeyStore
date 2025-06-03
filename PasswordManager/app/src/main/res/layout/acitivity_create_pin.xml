@@ -30,7 +30,7 @@
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_gravity="center"
-                android:src="@drawable/encrypted"
+                android:src="@drawable/lock"
                 android:tint="@color/primary_color"
                 tools:ignore="UseAppTint" />
 
