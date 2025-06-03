@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Password Manager</string>
+
+    <!-- PIN Related -->
+    <string name="create_pin_title">Create PIN</string>
+    <string name="enter_pin_title">Enter PIN</string>
+    <string name="create_pin_subtitle">Create a 6-digit PIN to secure your account</string>
+    <string name="enter_pin_subtitle">Enter your 6-digit PIN to continue</string>
+    <string name="pin_error">Incorrect PIN. Please try again.</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
+    <string name="forgot_pin">Forgot PIN?</string>
+
+    <!-- Authentication -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="secure_passwords">Secure your passwords with ease</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="full_name_hint">Full Name</string>
+
+    <!-- Dashboard -->
+    <string name="welcome_user">Welcome back, %s!</string>
+    <string name="password_count">You have %d saved passwords</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="recent_passwords">Recent Passwords</string>
+    <string name="add_password">Add Password</string>
+    <string name="generate_password">Generate Password</string>
+    <string name="no_passwords_yet">No passwords yet</string>
+    <string name="start_adding">Start by adding your first password</string>
+
+    <!-- Common -->
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="terms_agreement">I agree to the Terms and Conditions and Privacy Policy</string>
+    <string name="password_strength">Password strength:</string>
+    <string name="weak">Weak</string>
+    <string name="medium">Medium</string>
+    <string name="strong">Strong</string>
+</resources>

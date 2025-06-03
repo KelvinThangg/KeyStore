@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search_password"
+        android:title="Tìm kiếm"
+        android:icon="@drawable/ic_search" app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="Sắp xếp theo"
+        android:icon="@drawable/ic_sort" app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_sort_platform_asc"
+                android:title="Nền tảng (A-Z)" />
+            <item
+                android:id="@+id/action_sort_platform_desc"
+                android:title="Nền tảng (Z-A)" />
+            <item
+                android:id="@+id/action_sort_date_desc"
+                android:title="Ngày tạo (Mới nhất)" />
+            <item
+                android:id="@+id/action_sort_date_asc"
+                android:title="Ngày tạo (Cũ nhất)" />
+            <item
+                android:id="@+id/action_sort_username_asc"
+                android:title="Tên người dùng (A-Z)" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_refresh_passwords"
+        android:title="Làm mới"
+        android:icon="@drawable/ic_refresh"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Cài đặt"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_change_pin"
+        android:orderInCategory="101"
+        android:title="Đổi mã PIN"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="102"
+        android:title="Đăng xuất"
+        app:showAsAction="never" />
+</menu>

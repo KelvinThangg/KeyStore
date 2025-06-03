@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+<!--        android:minHeight="match_parent"-->
+
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <!-- Security Lock Icon -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/primary_light"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/lock"
+                    android:tint="@color/primary_color"
+                    tools:ignore="UseAppTint" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/TitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter PIN"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                style="@style/SubtitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your 6-digit PIN to continue"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="32dp" />
+
+        </LinearLayout>
+
+        <!-- PIN Display Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_container"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <!-- PIN Dots Display -->
+                <LinearLayout
+                    android:id="@+id/pinDotsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/dot1"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                    <View
+                        android:id="@+id/dot2"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                    <View
+                        android:id="@+id/dot3"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                    <View
+                        android:id="@+id/dot4"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                    <View
+                        android:id="@+id/dot5"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                    <View
+                        android:id="@+id/dot6"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/pin_dot_empty" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Error Message -->
+        <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incorrect PIN. Please try again."
+            android:textColor="@color/error_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/error"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical" />
+
+        <!-- Modern Number Keypad -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/ModernCardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Row 1: 1, 2, 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn1"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn2"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="2" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn3"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="3" />
+
+                </LinearLayout>
+
+                <!-- Row 2: 4, 5, 6 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn4"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="4" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn5"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="5" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn6"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="6" />
+
+                </LinearLayout>
+
+                <!-- Row 3: 7, 8, 9 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn7"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="7" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn8"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="8" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn9"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="9" />
+
+                </LinearLayout>
+
+                <!-- Row 4: Fingerprint, 0, Delete -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFingerprint"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="👆"
+                        android:textSize="24sp"
+                        android:backgroundTint="@color/info_color"
+                        android:visibility="visible" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn0"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="0" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDelete"
+                        style="@style/ModernPinButtonStyle"
+                        android:text="⌫"
+                        android:textSize="20sp"
+                        android:backgroundTint="@color/surface_variant" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Spacer để đẩy nút xuống dưới -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="16dp" />
+
+        <!-- Bottom Actions - Forgot PIN -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvForgotPin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="16dp"
+                android:text="Forgot PIN?"
+                android:textColor="@color/primary_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

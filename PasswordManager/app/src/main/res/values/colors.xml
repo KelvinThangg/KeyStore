@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#6750A4</color>
+    <color name="primary_dark_color">#4F378B</color>
+    <color name="primary_light">#EADDFF</color>
+    <color name="accent_color">#7C4DFF</color>
+
+    <color name="secondary_color">#625B71</color>
+    <color name="secondary_dark">#4A4458</color>
+    <color name="secondary_light">#E8DEF8</color>
+
+    <color name="surface">#FFFBFE</color>
+    <color name="surface_container">#F3EDF7</color>
+    <color name="surface_variant">#E7E0EC</color>
+    <color name="surface_dark">#1C1B1F</color>
+
+    <color name="background">#FFFBFE</color>
+    <color name="background_dark">#1C1B1F</color>
+
+    <color name="text_primary">#1C1B1F</color>
+    <color name="text_secondary">#49454F</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_secondary">#FFFFFF</color>
+    <color name="text_on_surface">#1C1B1F</color>
+    <color name="text_on_error">#FFFFFF</color>
+    <color name="text_primary_dark">#E6E1E5</color>
+
+    <color name="error_color">#BA1A1A</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="info_color">#2196F3</color>
+
+    <color name="outline">#79747E</color>
+    <color name="outline_variant">#CAC4D0</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="grey_300">#E0E0E0</color> <color name="surface_container_high">#EBE6F0</color> <color name="text_secondary_on_primary_light">#49454F</color> <color name="strength_empty">#D3D3D3</color> <color name="strength_very_weak">#FF0000</color> <color name="strength_weak">#FFA500</color>      <color name="strength_medium">#FFFF00</color>     <color name="strength_strong">#90EE90</color>     <color name="strength_very_strong">#008000</color> <color name="holo_green_light">#99CC00</color>
+    <color name="holo_orange_light">#FFBB33</color>
+    <color name="holo_red_light">#FF4444</color>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243131873074",
+    "project_id": "passwordmanager-99807",
+    "storage_bucket": "passwordmanager-99807.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243131873074:android:a95673c47185c648aa092b",
+        "android_client_info": {
+          "package_name": "com.example.passwordmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwOEwz9EGtiGTeYTHgBusLNt0zqtT6rwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
