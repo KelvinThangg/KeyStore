@@ -30,22 +30,21 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
-    private static final int REQ_ONE_TAP = 9001; // Mã yêu cầu cho One Tap Sign-In
+    private static final int REQ_ONE_TAP = 9001;
 
     private FirebaseAuth mAuth;
-    private SignInClient oneTapClient; // Client cho Google Identity API
+    private SignInClient oneTapClient;
     private SharedPreferences sharedPreferences;
 
     private EditText etEmail, etPassword;
     private Button btnLogin, btnGoogleSignIn;
-    private TextView tvSignUp;
+    private TextView tvSignUp, tvForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Khởi tạo Firebase nếu chưa được khởi tạo
         if (FirebaseApp.getApps(this).isEmpty()) {
             try {
                 FirebaseApp.initializeApp(this);
@@ -55,13 +54,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
-        // Khởi tạo Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-
-        // Khởi tạo Google Identity Client (thay thế GoogleSignInClient)
         oneTapClient = Identity.getSignInClient(this);
-
-        // Khởi tạo SharedPreferences
         sharedPreferences = getSharedPreferences("PasswordManagerPrefs", MODE_PRIVATE);
 
         initViews();
@@ -74,14 +68,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnGoogleSignIn = findViewById(R.id.btnGoogleSignIn);
         tvSignUp = findViewById(R.id.tvSignUp);
+        tvForgotPassword = findViewById(R.id.tvForgotPassword);
     }
 
     private void setupClickListeners() {
         btnLogin.setOnClickListener(v -> loginWithEmail());
-
         btnGoogleSignIn.setOnClickListener(v -> signInWithGoogle());
-
         tvSignUp.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
+        tvForgotPassword.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class)));
     }
 
     private void loginWithEmail() {
@@ -183,7 +177,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void onLoginSuccess(FirebaseUser user) {
-        // Lưu trạng thái đăng nhập
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("isLoggedIn", true);
         editor.putString("userEmail", user.getEmail());
@@ -192,7 +185,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
-        // Kiểm tra xem đã có PIN chưa
         boolean hasPin = sharedPreferences.getBoolean("hasPin", false);
 
         if (hasPin) {

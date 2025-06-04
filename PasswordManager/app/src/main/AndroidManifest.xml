@@ -20,7 +20,8 @@
             android:exported="false" />
         <activity
             android:name=".model.PlatformSuggestion"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".PinVerificationActivity"
             android:exported="false" />
@@ -59,6 +60,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/lock" />
+        <activity android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PasswordManager" />
     </application>
 
 </manifest>

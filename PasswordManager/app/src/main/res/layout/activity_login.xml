@@ -36,7 +36,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/encrypted"
+                    android:src="@drawable/lock"
                     android:tint="@color/primary_color"
                     tools:ignore="UseAppTint" />
 
@@ -75,7 +75,6 @@
                     style="@style/ModernTextInputStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     app:startIconTint="@color/primary_color">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -93,7 +92,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:passwordToggleEnabled="true"
-
                     app:startIconTint="@color/primary_color"
                     android:layout_marginBottom="24dp">
 
@@ -113,6 +111,18 @@
                     android:layout_width="match_parent"
                     android:text="Sign In"
                     android:backgroundTint="@color/primary_color"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Forgot Password Link -->
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quên mật khẩu?"
+                    android:textColor="@color/primary_color"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp" />
 
                 <!-- Divider -->
