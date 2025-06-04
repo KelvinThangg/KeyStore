@@ -1,12 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.PasswordManager.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorOnPrimary">@color/text_on_primary</item>
         <item name="colorPrimaryContainer">@color/primary_light</item>
+        <!-- Surface colors -->
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/text_on_surface</item>
+        <!-- Status bar customization -->
+        <item name="android:statusBarColor">?attr/colorPrimaryContainer</item>
+        <!-- Ensure Material3 compatibility -->
+        <item name="android:windowBackground">@color/surface</item>
     </style>
 
-    <style name="Theme.PasswordManager.NoActionBar" parent="Base.Theme.PasswordManager" />
+    <!-- Application theme referenced in AndroidManifest.xml -->
+    <style name="Theme.PasswordManager" parent="Base.Theme.PasswordManager.NoActionBar" />
+
+    <!-- Optional: Retain no-action-bar variant if needed -->
+    <style name="Theme.PasswordManager.NoActionBar" parent="Base.Theme.PasswordManager.NoActionBar" />
 </resources>
