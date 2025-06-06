@@ -5,6 +5,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.passwordmanager.login.CreatePinActivity;
+import com.example.passwordmanager.login.LoginActivity;
+import com.example.passwordmanager.login.PinActivity;
+
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private static final String PREF_NAME = "PasswordManagerPrefs";

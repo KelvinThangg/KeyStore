@@ -31,11 +31,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    // kotlinOptions { // Nếu bạn đang sử dụng Kotlin, bỏ comment khối này
+    // kotlinOptions {
     //    jvmTarget = "11"
     // }
-    buildFeatures { // Thêm nếu bạn sử dụng View Binding hoặc Data Binding
-        viewBinding = true // Ví dụ, thay đổi nếu cần
+    buildFeatures {
+        viewBinding = true //
     }
 }
 

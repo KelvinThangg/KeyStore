@@ -26,9 +26,9 @@
             android:name=".PinVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".AddEditPasswordActivity"
+            android:name=".password.AddEditPasswordActivity"
             android:exported="false"
-            android:parentActivityName=".DashboardActivity"
+            android:parentActivityName=".dashboard.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
@@ -40,19 +40,19 @@
             </intent-filter>
         </activity> <!-- Các màn hình khác -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".login.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".CreatePinActivity"
+            android:name=".login.CreatePinActivity"
             android:exported="true" />
         <activity
-            android:name=".PinActivity"
+            android:name=".login.PinActivity"
             android:exported="true" /> <!-- FIXED: Use Material3 compatible theme instead of AppCompat -->
         <activity
-            android:name=".DashboardActivity"
+            android:name=".dashboard.DashboardActivity"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- Cấu hình đăng nhập bằng Google -->
         <meta-data
             android:name="com.google.android.gms.version"
@@ -60,7 +60,7 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/lock" />
-        <activity android:name=".ForgotPasswordActivity"
+        <activity android:name=".login.ForgotPasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.PasswordManager" />
     </application>

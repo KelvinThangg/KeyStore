@@ -24,14 +24,14 @@
             android:gravity="center"
             android:layout_marginBottom="32dp">
 
-            <!-- Security Lock Icon -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:cardCornerRadius="50dp"
-                app:cardElevation="8dp"
+
+                android:layout_marginBottom="24dp"
                 app:cardBackgroundColor="@color/primary_light"
-                android:layout_marginBottom="24dp">
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp" >
 
                 <ImageView
                     android:layout_width="48dp"
@@ -40,7 +40,6 @@
                     android:src="@drawable/lock"
                     android:tint="@color/primary_color"
                     tools:ignore="UseAppTint" />
-
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
@@ -143,7 +142,7 @@
             android:textStyle="bold"
             android:visibility="gone"
             android:layout_marginBottom="16dp"
-            android:drawableStart="@drawable/error"
+
             android:drawablePadding="8dp"
             android:gravity="center_vertical" />
 
